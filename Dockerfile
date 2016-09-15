@@ -1,5 +1,7 @@
 FROM ruby:alpine
 
+MAINTAINER Jorge Quilcate <quilcate.jorge@gmail.com>
+
 ENV SLIDES_HOME=/opt/slides
 
 RUN mkdir -p $SLIDES_HOME
