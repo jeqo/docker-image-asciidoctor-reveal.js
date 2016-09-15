@@ -26,4 +26,6 @@ ADD run.sh .
 
 RUN chmod +x run.sh
 
+EXPOSE 8000
+
 CMD ./run.sh
