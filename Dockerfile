@@ -2,19 +2,19 @@ FROM ruby:alpine
 
 MAINTAINER Jorge Quilcate <quilcate.jorge@gmail.com>
 
-ENV SLIDES_BASE=/opt
+ENV INDEX=
 
-WORKDIR $SLIDES_BASE
+WORKDIR /opt
 
 RUN apk add --no-cache bash git openssh python make inotify-tools
 RUN gem install asciidoctor tilt thread_safe slim
-RUN git clone git://github.com/asciidoctor/asciidoctor-reveal.js.git $SLIDES_BASE
+RUN git clone git://github.com/asciidoctor/asciidoctor-reveal.js.git /opt
 
 ADD Makefile .
 ADD run.sh .
 RUN chmod +x run.sh
 
-VOLUME $SLIDES_BASE/slides
+VOLUME /opt/slides
 
 EXPOSE 8000
 
