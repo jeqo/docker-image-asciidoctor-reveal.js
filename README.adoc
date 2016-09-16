@@ -24,7 +24,7 @@ git submodule add git://github.com/hakimel/reveal.js.git
 Run the following command to create a container:
 
 ```bash
-docker run --rm -t -v "$PWD/test":/opt/slides -p 8000:8000 -e INDEX=history.html jeqo/asciidoctor-reveal.js
+docker run --rm -it -v "$PWD/test":/opt/slides -p 8000:8000 -e INDEX=history.html jeqo/asciidoctor-reveal.js
 ```
 
 Map your volumes correctly to the directory where your slides
