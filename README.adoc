@@ -1,0 +1,22 @@
+= Dockerize your application with AsciiDoctor-Reveal.js image
+
+== Usage
+
+=== 1. Create your Slides
+
+You can follow this https://github.com/asciidoctor/asciidoctor-reveal.js/[tutorial]
+or check the samples in `test` directory to create your
+slides using AsciiDoctor.
+
+=== 2. Add Reveal.js Submodule
+
+You will need `reveal.js` scripts on the same directory as
+your slides to make it work:
+
+```bash
+git submodule add git://github.com/hakimel/reveal.js.git
+```
+
+```bash
+docker run --rm -t -v "$PWD/test":/opt/slides -p 8000:8000 jeqo/asciidoctor-reveal.js
+```
